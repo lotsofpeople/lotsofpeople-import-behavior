@@ -1,0 +1,18 @@
+{
+  "name": "import-behavior",
+  "description": "Imports content of markdown files into a Polymer property",
+  "private": true,
+  "main": "import-behavior.html",
+  "authors": [
+    "Boris van Hoytema"
+  ],
+  "keywords": [
+    "markdown",
+    "behavior"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Journeyy/import-behavior.git"
+  },
+  "ignore": []
+}
