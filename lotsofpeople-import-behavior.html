@@ -1,0 +1,28 @@
+<script>
+  LotsofpeopleImportBehavior = {
+    _getImportContents: function setContentsFromFileWithImport(filePath, onSuccess) {
+      var self = this
+      var link = document.querySelector('link[rel="import"][href="' + filePath + '"]')
+
+      if (link === null) {
+        return this.importHref(filePath, function(evt) {
+          setFromElement(evt.currentTarget)
+        }, function(evt) {
+          console.error('Error importing file', filePath)
+        }, true)
+      }
+      return setFromElement(link)
+
+      function setFromElement(element) {
+        if (element.import) {
+          var content = element.import.body.innerHTML
+          if (!content) {
+            return console.error('No content for', filePath, element)
+          }
+          return onSuccess(content)
+        }
+        return console.error('Element did not have an import attribute')
+      }
+    }
+  }
+</script>
